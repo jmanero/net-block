@@ -34,7 +34,7 @@ subnets:
   property1: value3
 ```
 
-A root address in CIDR form must be provided that encapsulates all of the given subnets. Subnets are an array of objects with, at least, an `address` property containing a CIDR string. Additional properties may be provided for annotations.
+A `root` address in CIDR form that encapsulates all of the given subnets must be provided. The `subnets` property is an array of objects with, at least, an `address` property containing a CIDR string. Additional properties may be provided for metadata.
 
 Run `bundle exec nb help` for detailed CLI usage.
 
