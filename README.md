@@ -1,8 +1,7 @@
-# Net::Block
+Net::Block
+==========
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/net/block`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The `net-block` gem provides several foundational classes for managing information about IPv4 networks and addresses, including a BitSet, Address, and Trie.
 
 ## Installation
 
@@ -22,14 +21,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The included `nb` CLI exposes several commands to summarize a given network specification. Networks are defined in YAML documents with the following layout:
 
-## Development
+```yml
+root: 192.168.1.0/24
+subnets:
+- address: 192.168.1.0/27
+  property1: value1
+- address: 192.168.1.32/27
+  property1: value2
+- address: 192.168.1.64/27
+  property1: value3
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+A root address in CIDR form must be provided that encapsulates all of the given subnets. Subnets are an array of objects with, at least, an `address` property containing a CIDR string. Additional properties may be provided for annotations.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Run `bundle exec nb help` for detailed CLI usage.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/net-block.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jmanero/net-block.
