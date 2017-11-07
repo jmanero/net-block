@@ -1,0 +1,27 @@
+---
+inherit_from: .rubocop_todo.yml
+
+Metrics/AbcSize:
+  Max: 32
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 120
+
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 16
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+# Configuration parameters: PreferredDelimiters.
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '[]'
+    '%q': '{}'
+    '%w': '()'
